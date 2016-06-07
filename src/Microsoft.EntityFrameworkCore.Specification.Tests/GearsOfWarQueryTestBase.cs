@@ -1467,6 +1467,17 @@ namespace Microsoft.EntityFrameworkCore.Specification.Tests
             }
         }
 
+        [ConditionalFact]
+        public virtual void Coalesce_operator_in_predicate_with_other_conditions()
+        {
+            using (var context = CreateContext())
+            {
+                var query = context.Weapons.Where(w => w.AmmunitionType == AmmunitionType.Cartridge && ((bool?)w.IsAutomatic ?? false)).ToList();
+
+                Assert.Equal(3, query.Count);
+            }
+        }
+
         protected GearsOfWarContext CreateContext() => Fixture.CreateContext(TestStore);
 
         protected GearsOfWarQueryTestBase(TFixture fixture)

@@ -1925,7 +1925,7 @@ WHERE [e].[EmployeeID] = 1",
             Assert.Equal(
                 @"SELECT [e].[EmployeeID], [e].[City], [e].[Country], [e].[FirstName], [e].[ReportsTo], [e].[Title]
 FROM [Employees] AS [e]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
 
             Assert.True(TestSqlLoggerFactory.Log.Contains(
@@ -1971,11 +1971,11 @@ WHERE @__intPrm_0 = [e].[ReportsTo]",
             Assert.Equal(
                 @"SELECT [e].[EmployeeID], [e].[City], [e].[Country], [e].[FirstName], [e].[ReportsTo], [e].[Title]
 FROM [Employees] AS [e]
-WHERE 1 = 0
+WHERE 0 = 1
 
 SELECT [e].[EmployeeID], [e].[City], [e].[Country], [e].[FirstName], [e].[ReportsTo], [e].[Title]
 FROM [Employees] AS [e]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
 
             Assert.True(TestSqlLoggerFactory.Log.Contains(
@@ -1992,11 +1992,11 @@ WHERE 1 = 0",
             Assert.Equal(
                 @"SELECT [e].[EmployeeID], [e].[City], [e].[Country], [e].[FirstName], [e].[ReportsTo], [e].[Title]
 FROM [Employees] AS [e]
-WHERE 1 = 0
+WHERE 0 = 1
 
 SELECT [e].[EmployeeID], [e].[City], [e].[Country], [e].[FirstName], [e].[ReportsTo], [e].[Title]
 FROM [Employees] AS [e]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
 
             Assert.True(TestSqlLoggerFactory.Log.Contains(
@@ -2220,7 +2220,7 @@ FROM [Customers] AS [c]",
             Assert.Equal(
                 @"SELECT [c].[CustomerID], [c].[Address], [c].[City], [c].[CompanyName], [c].[ContactName], [c].[ContactTitle], [c].[Country], [c].[Fax], [c].[Phone], [c].[PostalCode], [c].[Region]
 FROM [Customers] AS [c]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
         }
 
@@ -2231,7 +2231,7 @@ WHERE 1 = 0",
             Assert.Equal(
                 @"SELECT [c].[CustomerID], [c].[Address], [c].[City], [c].[CompanyName], [c].[ContactName], [c].[ContactTitle], [c].[Country], [c].[Fax], [c].[Phone], [c].[PostalCode], [c].[Region]
 FROM [Customers] AS [c]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
         }
 
@@ -3417,7 +3417,7 @@ ORDER BY [e1].[EmployeeID]",
             Assert.Equal(
                 @"SELECT [c].[CustomerID], [c].[Address], [c].[City], [c].[CompanyName], [c].[ContactName], [c].[ContactTitle], [c].[Country], [c].[Fax], [c].[Phone], [c].[PostalCode], [c].[Region]
 FROM [Customers] AS [c]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
         }
 
@@ -4978,7 +4978,7 @@ WHERE [c].[CustomerID] IN (N'ALFKI', N'ABC'')); GO; DROP TABLE Orders; GO; --', 
             Assert.Equal(
                 @"SELECT [c].[CustomerID], [c].[Address], [c].[City], [c].[CompanyName], [c].[ContactName], [c].[ContactTitle], [c].[Country], [c].[Fax], [c].[Phone], [c].[PostalCode], [c].[Region]
 FROM [Customers] AS [c]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
         }
 

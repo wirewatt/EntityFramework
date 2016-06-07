@@ -985,7 +985,7 @@ FROM [NullSemanticsEntity1] AS [e]
 
 SELECT [e].[Id]
 FROM [NullSemanticsEntity1] AS [e]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
         }
 
@@ -996,7 +996,7 @@ WHERE 1 = 0",
             Assert.Equal(
                 @"SELECT [e].[Id]
 FROM [NullSemanticsEntity1] AS [e]
-WHERE 1 = 0
+WHERE 0 = 1
 
 SELECT [e].[Id]
 FROM [NullSemanticsEntity1] AS [e]",
@@ -1010,7 +1010,7 @@ FROM [NullSemanticsEntity1] AS [e]",
             Assert.Equal(
                 @"SELECT [e].[Id]
 FROM [NullSemanticsEntity1] AS [e]
-WHERE 1 = 0
+WHERE 0 = 1
 
 SELECT [e].[Id]
 FROM [NullSemanticsEntity1] AS [e]",
@@ -1056,7 +1056,7 @@ WHERE @__prm_0 = N'Foo'
 
 SELECT [e].[Id]
 FROM [NullSemanticsEntity1] AS [e]
-WHERE 1 = 0",
+WHERE 0 = 1",
                 Sql);
 
         }

@@ -1469,6 +1469,17 @@ WHERE COALESCE([w].[IsAutomatic], 0) = 1",
                 Sql);
         }
 
+        public override void Coalesce_operator_in_predicate_with_other_conditions()
+        {
+            base.Coalesce_operator_in_predicate_with_other_conditions();
+
+            Assert.Equal(
+                @"SELECT [w].[Id], [w].[AmmunitionType], [w].[IsAutomatic], [w].[Name], [w].[OwnerFullName], [w].[SynergyWithId]
+FROM [Weapon] AS [w]
+WHERE ([w].[AmmunitionType] = 1) AND (COALESCE([w].[IsAutomatic], 0) = 1)",
+                Sql);
+        }
+
         public GearsOfWarQuerySqlServerTest(GearsOfWarQuerySqlServerFixture fixture, ITestOutputHelper testOutputHelper)
             : base(fixture)
         {
